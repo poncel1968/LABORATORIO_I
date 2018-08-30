@@ -30,8 +30,6 @@ int getNumero( int* pResultado, char mensaje[], char mensajeError[],int minimo, 
         {
             printf("\n%s", mensajeError);
 
-
-
         }
         else
         {
