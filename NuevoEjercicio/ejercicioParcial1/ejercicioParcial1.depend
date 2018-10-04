@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1538669302 source:c:\users\joaquin\desktop\nuevoejercicio\ejercicioparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"usuario.h"
+
+1538662690 c:\users\joaquin\desktop\nuevoejercicio\ejercicioparcial1\utn.h
+
+1538669302 source:c:\users\joaquin\desktop\nuevoejercicio\ejercicioparcial1\usuario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"usuario.h"
+	"utn.h"
+
+1538668561 c:\users\joaquin\desktop\nuevoejercicio\ejercicioparcial1\usuario.h
+
+1538669028 source:c:\users\joaquin\desktop\nuevoejercicio\ejercicioparcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
