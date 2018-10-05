@@ -45,6 +45,7 @@ int ventas_alta(ventas* array,int limite)
 
     if (flag==1 &&
     utn_getInt(&idCliente,5)==0 &&
+    clientes_existeId(array,limite,idCliente) &&
     utn_getInt(&cantAfiches,5)==0 &&
     utn_getString(nombreArchivo,100,"Ingrese nombre Archivo : ","Error")== 0 &&
     utn_getString(zona,100,"Ingrese zona : ","error")== 0)

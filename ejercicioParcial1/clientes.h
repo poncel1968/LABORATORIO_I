@@ -16,4 +16,4 @@ int clientes_init(cliente* cliente,int limitearray);
 int clientes_modificar(cliente* array,int limite);
 int clientes_baja(cliente* array,int limite);
 int clientes_buscarLugarVacio(cliente* array, int limitearray);
-
+int clientes_existeId(cliente* array, int limite, int idBuscar);

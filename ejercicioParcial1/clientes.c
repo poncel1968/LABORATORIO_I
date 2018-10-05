@@ -186,7 +186,6 @@ int clientes_baja(cliente* array,int limite)
     int flag=0;
     int retorno=-1;
     int idBuscado;
-    char confirmacion;
 
     printf("\nIngrese Id a Dar de Baja :");
     utn_getInt(&idBuscado,5);
@@ -215,6 +214,22 @@ int clientes_baja(cliente* array,int limite)
 return retorno;
 
  }
+
+ int clientes_existeId(cliente* array, int limite, int idBuscar)
+{
+    int retorno =-1;
+    int i;
+
+    for(i=0;i<limite;i++)
+    {
+        if (array[i].id == idBuscar)
+        {
+            retorno=0;
+            break;
+        }
+    }
+    return retorno;
+}
 /*
  int clientes_filler(cliente* array, int limite, char* nombre, char* apellido, char* cuit )
 {
