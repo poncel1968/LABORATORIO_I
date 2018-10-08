@@ -68,6 +68,7 @@ int ventas_alta(ventas* array,int limite,int idCliente)
         array[i].isEmpty=0;
         strncpy(array[i].estado,"a cobrar",strlen("a cobrar"));
         array[i].idCliente=idCliente;
+        array[i].cantAfiches=cantAfiches;
         retorno=0;
     }
     else

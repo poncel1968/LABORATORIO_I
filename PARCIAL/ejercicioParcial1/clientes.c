@@ -52,8 +52,8 @@ int clientes_alta(cliente* nuevoCliente,int limitearray)
     utn_getString(cuit,13,"Ingrese CUIT Cliente : ","Error CUIT")==0)
     {
 
-        strncpy(nuevoCliente[i].nombre,nombre,(strlen(nombre)));
-        strncpy(nuevoCliente[i].apellido,apellido,(strlen(apellido)));
+        strncpy(nuevoCliente[i].nombre,strupr(nombre),(strlen(nombre)));
+        strncpy(nuevoCliente[i].apellido,strupr(apellido),(strlen(apellido)));
         strncpy(nuevoCliente[i].cuit,cuit,(strlen(cuit)));
         nuevoCliente[i].isEmpty=0;
         nuevoCliente[i].id=getNextId();

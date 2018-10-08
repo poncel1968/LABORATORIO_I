@@ -4,6 +4,7 @@
 #include "utn.h"
 #include "clientes.h"
 #include "ventas.h"
+#include "listados.h"
 #define CANTCLIENTES 100
 #define CANTVENTAS 1000
 
@@ -17,22 +18,23 @@ int j,k;
 int contador;
 int idClienteBuscado;
 int idVentasBuscado;
-char opcionesMenu[500]={"\n1. Alta de cliente \n2. Modificacion de cliente\n3. Baja de Clientes\n4. Alta de Venta por Id Cliente\n5. Modificacion de Venta\n6. Cobranza de venta\n7. Listado de clientes con ventas a cobrar\n99. Salir\n"};
+char opcionesMenu[500]={"\n1. Alta de cliente \n2. Modificacion de cliente\n3. Baja de Clientes\n4. Alta de Venta por Id Cliente\n5. Modificacion de Venta\n6. Cobranza de venta\n7. Listado de clientes con ventas a cobrar\n"};
+strcat(opcionesMenu,"8. Listado Clientes por Apellido\n9. Listado de ventas por Id cliente\n10. Listado de clientes por Cantidad de Afiches\n99. Salir\n");
 
 cliente eClientes[CANTCLIENTES];
 ventas eVentas[CANTVENTAS];
 clientes_init(eClientes,CANTCLIENTES);
 ventas_init(eVentas,CANTVENTAS);
 
-clientes_filler(eClientes, CANTCLIENTES,"leonard", "gomez", "2223331" );
-clientes_filler(eClientes, CANTCLIENTES,"jose", "ortiz", "553" );
-clientes_filler(eClientes, CANTCLIENTES,"daniel", "ramirez", "299981" );
+clientes_filler(eClientes, CANTCLIENTES,"LEONEL", "GIMENZ", "2223331" );
+clientes_filler(eClientes, CANTCLIENTES,"JOSE", "ORTIZ", "553" );
+clientes_filler(eClientes, CANTCLIENTES,"MARCELA", "RAMIREZ", "299981" );
 
 ventas_filler(eVentas,CANTVENTAS, 1,22, "archivo 1", "CABA", "a cobrar");
 ventas_filler(eVentas,CANTVENTAS, 1,23, "archivo 11", "CABA", "a cobrar");
 ventas_filler(eVentas,CANTVENTAS, 1,9, "archivo abc", "GBA", "a cobrar");
 ventas_filler(eVentas,CANTVENTAS, 1,7, "archivo d", "GBA", "a cobrar");
-ventas_filler(eVentas,CANTVENTAS, 1,3, "archivo vacio", "INTERIOR", "a cobrar");
+ventas_filler(eVentas,CANTVENTAS, 2,3, "archivo vacio", "INTERIOR", "a cobrar");
 
     do
     {
@@ -59,7 +61,14 @@ ventas_filler(eVentas,CANTVENTAS, 1,3, "archivo vacio", "INTERIOR", "a cobrar");
 
         case 4:
         utn_getInt(&idClienteBuscado,5,"\nIngrese Id del Cliente para la venta :","Error Id ingresado");
-        ventas_alta(eVentas,CANTVENTAS,idClienteBuscado);
+        if (clientes_getElementById(eClientes,CANTCLIENTES,idClienteBuscado)!=NULL)
+        {
+            ventas_alta(eVentas,CANTVENTAS,idClienteBuscado);
+        }
+        else
+        {
+            printf("Id Cliente no encontrado\n");
+        }
         break;
 
         case 5:
@@ -102,6 +111,18 @@ ventas_filler(eVentas,CANTVENTAS, 1,3, "archivo vacio", "INTERIOR", "a cobrar");
                 printf("Cantidad de ventas a cobrar = %d \n", contador);
             }
         }
+        break;
+
+        case 8:
+        listados_clientes_ordenarPorApellido(eClientes, CANTCLIENTES);
+        break;
+
+        case 9:
+        listados_ventasPorIdCliente(eClientes,CANTCLIENTES, eVentas, CANTVENTAS);
+        break;
+
+        case 10:
+        listados_clientesPorCantidadAfiches(eClientes,CANTCLIENTES, eVentas,CANTVENTAS);
         break;
 
         case 99:

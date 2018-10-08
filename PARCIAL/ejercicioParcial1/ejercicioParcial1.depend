@@ -76,7 +76,7 @@
 
 1538837401 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\afiches.c
 
-1538857915 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\clientes.c
+1538939696 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -91,14 +91,14 @@
 
 1538858563 c:\users\joaquin\desktop\parcial\ejercicioparcial1\ventas.h
 
-1538860932 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\main.c
+1538944923 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
-	"usuario.h"
 	"clientes.h"
 	"ventas.h"
+	"listados.h"
 
 1538837401 c:\users\joaquin\desktop\parcial\ejercicioparcial1\usuario.h
 
@@ -122,4 +122,15 @@
 	"utn.h"
 	"ventas.h"
 	"clientes.h"
+
+1538945054 source:c:\users\joaquin\desktop\parcial\ejercicioparcial1\listados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"clientes.h"
+	"ventas.h"
+	"listados.h"
+
+1538941800 c:\users\joaquin\desktop\parcial\ejercicioparcial1\listados.h
 
